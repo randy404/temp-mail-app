@@ -114,6 +114,11 @@ class PublicEmailService {
 
         // Public interface - redirect to dashboard
         this.app.get('/', (req, res) => {
+            res.redirect('/dashboard.html');
+        });
+
+        // Dashboard route
+        this.app.get('/dashboard.html', (req, res) => {
             res.sendFile(path.join(__dirname, 'dashboard.html'));
         });
 
