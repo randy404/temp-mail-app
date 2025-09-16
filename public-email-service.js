@@ -31,13 +31,18 @@ class PublicEmailService {
             allowedHeaders: ['Content-Type', 'Authorization']
         }));
         this.app.use(express.json());
-        this.app.use(express.static(path.join(__dirname)));
+        
+        // Disable static file serving to prevent cache issues
+        // this.app.use(express.static(path.join(__dirname)));
         
         // Add security headers
         this.app.use((req, res, next) => {
             res.header('Access-Control-Allow-Origin', '*');
             res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
             res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+            res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.header('Pragma', 'no-cache');
+            res.header('Expires', '0');
             next();
         });
     }
@@ -112,14 +117,41 @@ class PublicEmailService {
             });
         });
 
-        // Public interface - serve index.html
+        // Public interface - serve dashboard directly
         this.app.get('/', (req, res) => {
-            res.sendFile(path.join(__dirname, 'index.html'));
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.setHeader('Pragma', 'no-cache');
+            res.setHeader('Expires', '0');
+            res.sendFile(path.join(__dirname, 'dashboard.html'));
         });
 
         // Dashboard route
         this.app.get('/dashboard.html', (req, res) => {
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.setHeader('Pragma', 'no-cache');
+            res.setHeader('Expires', '0');
             res.sendFile(path.join(__dirname, 'dashboard.html'));
+        });
+
+        // Serve static files manually
+        this.app.get('/dashboard.css', (req, res) => {
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.sendFile(path.join(__dirname, 'dashboard.css'));
+        });
+
+        this.app.get('/dashboard.js', (req, res) => {
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.sendFile(path.join(__dirname, 'dashboard.js'));
+        });
+
+        this.app.get('/auth.js', (req, res) => {
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.sendFile(path.join(__dirname, 'auth.js'));
+        });
+
+        this.app.get('/database.js', (req, res) => {
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.sendFile(path.join(__dirname, 'database.js'));
         });
 
         // API for external services
