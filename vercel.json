@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "public-email-service.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "public-email-service.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

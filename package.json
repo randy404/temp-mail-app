@@ -1,0 +1,30 @@
+{
+  "name": "temp-mail-app",
+  "version": "1.0.0",
+  "description": "Temporary Email Service with Login",
+  "main": "server.js",
+  "scripts": {
+    "start": "node public-email-service.js",
+    "dev": "nodemon server.js",
+    "heroku-postbuild": "npm install"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mailparser": "^3.7.4",
+    "smtp-server": "^3.14.0",
+    "sqlite3": "^5.1.7",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "temp-mail",
+    "disposable-email",
+    "nodejs",
+    "express"
+  ],
+  "author": "TempMail Team",
+  "license": "MIT"
+}

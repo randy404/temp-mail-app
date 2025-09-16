@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TempMail</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-envelope"></i>
+            <h1>TempMail</h1>
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Privacy</a>
+            <a href="#" class="nav-link">API</a>
+            <a href="#" class="nav-link">FAQ</a>
+            <div class="user-menu">
+                <span id="userName">User</span>
+                <button onclick="logout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="dashboard-header">
+            <h2>Welcome to your Dashboard</h2>
+            <p>Manage your temporary email addresses and inbox</p>
+        </div>
+
+        <div class="email-section">
+            <div class="email-generator">
+                <div class="email-display">
+                    <input type="text" id="emailAddress" class="email-input" readonly>
+                    <button id="copyEmail" class="copy-btn">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <button id="generateNew" class="generate-btn">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div class="email-info">
+                    <p>Your temporary email address is ready for use instantly</p>
+                </div>
+            </div>
+
+            <div class="email-history-section">
+                <div class="history-header">
+                    <h3>Email History</h3>
+                    <button id="toggleHistory" class="toggle-btn">
+                        <i class="fas fa-history"></i>
+                        Show History
+                    </button>
+                </div>
+                <div id="emailHistory" class="email-history hidden">
+                    <div class="history-list" id="historyList">
+                        <div class="empty-history">
+                            <i class="fas fa-history"></i>
+                            <p>No email history yet. Generate your first temporary email to see it here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="test-email-section">
+                <div class="test-email-header">
+                    <h3>Test Email Sender</h3>
+                    <p>Send a test email to your temporary address</p>
+                </div>
+                <div class="test-email-form">
+                    <div class="form-group">
+                        <label for="testFrom">From Email:</label>
+                        <input type="email" id="testFrom" placeholder="sender@example.com" value="test@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="testSubject">Subject:</label>
+                        <input type="text" id="testSubject" placeholder="Test Email Subject" value="Test Email from TempMail">
+                    </div>
+                    <div class="form-group">
+                        <label for="testContent">Message:</label>
+                        <textarea id="testContent" placeholder="Your test message here..." rows="3">This is a test email to verify that your temporary email address is working correctly. If you receive this email, the system is functioning properly!</textarea>
+                    </div>
+                    <button id="sendTestEmail" class="send-test-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Test Email
+                    </button>
+                </div>
+            </div>
+
+            <div class="inbox-section">
+                <div class="inbox-header">
+                    <h3>Inbox</h3>
+                    <button id="refreshInbox" class="refresh-btn">
+                        <i class="fas fa-sync-alt"></i>
+                        Refresh
+                    </button>
+                </div>
+                <div id="inbox" class="inbox">
+                    <div class="empty-inbox">
+                        <i class="fas fa-inbox"></i>
+                        <p>No emails yet. Your temporary email is ready to receive messages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-card">
+                <i class="fas fa-envelope"></i>
+                <h3 id="totalEmails">0</h3>
+                <p>Total Emails</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <h3 id="activeEmails">0</h3>
+                <p>Active Addresses</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3 id="blockedSpam">0</h3>
+                <p>Spam Blocked</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="email-header">
+                <h3 id="emailSubject">Email Subject</h3>
+                <div class="email-meta">
+                    <p><strong>From:</strong> <span id="emailFrom"></span></p>
+                    <p><strong>To:</strong> <span id="emailTo"></span></p>
+                    <p><strong>Date:</strong> <span id="emailDate"></span></p>
+                </div>
+            </div>
+            <div class="email-body">
+                <p id="emailContent"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 TempMail. All rights reserved.</p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
