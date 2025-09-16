@@ -112,9 +112,9 @@ class PublicEmailService {
             });
         });
 
-        // Public interface - redirect to dashboard
+        // Public interface - serve index.html
         this.app.get('/', (req, res) => {
-            res.redirect('/dashboard.html');
+            res.sendFile(path.join(__dirname, 'index.html'));
         });
 
         // Dashboard route

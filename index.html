@@ -3,59 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TempMail - Secure Temporary Email</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>TempMail - Redirecting...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <i class="fas fa-envelope"></i>
-            <h1>TempMail</h1>
-        </div>
-        <nav class="nav">
-            <a href="#" class="nav-link">Privacy</a>
-            <a href="#" class="nav-link">API</a>
-            <a href="#" class="nav-link">FAQ</a>
-            <a href="#" class="nav-link">Feedback</a>
-            <a href="#" class="nav-link">Contacts</a>
-            <a href="login.html" class="nav-link login-btn">
-                <i class="fas fa-sign-in-alt"></i>
-                Login
-            </a>
-        </nav>
-    </header>
+    <div class="container">
+        <h1>📧 TempMail</h1>
+        <p>Redirecting to dashboard...</p>
+        <div class="spinner"></div>
+        <p>If you are not redirected automatically, <a href="/dashboard.html" style="color: #fff; text-decoration: underline;">click here</a></p>
+    </div>
 
-    <main class="main">
-        <div class="hero">
-            <h2>Secure Temporary Email</h2>
-            <p>Protect your personal email address from spam, bots, phishing, and other online abuse with our free temporary disposable anonymous email service.</p>
-        </div>
-
-
-        <div class="features">
-            <div class="feature">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Secure Temporary Email</h3>
-                <p>Generate disposable email addresses instantly to protect your privacy and avoid spam.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-clock"></i>
-                <h3>Auto-Expiring</h3>
-                <p>Emails automatically expire after a set time, keeping your inbox clean and secure.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-user-secret"></i>
-                <h3>Anonymous</h3>
-                <p>No registration required for basic use. Your identity remains completely anonymous.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2024 TempMail. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <script>
+        // Redirect to dashboard
+        setTimeout(() => {
+            window.location.href = '/dashboard.html';
+        }, 1000);
+    </script>
 </body>
 </html>
