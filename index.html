@@ -6,50 +6,122 @@
     <title>TempMail - Temporary Email Service</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
     <div class="landing-container">
         <div class="landing-content">
+            <!-- Header Section -->
             <div class="landing-header">
-                <div class="logo">
-                    <i class="fas fa-envelope"></i>
-                    <h1>TempMail</h1>
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h1 class="logo-text">TempMail</h1>
                 </div>
-                <p class="tagline">Temporary Email Service - Protect Your Privacy</p>
+                <p class="tagline">Secure • Fast • Anonymous</p>
+                <p class="subtitle">Generate temporary email addresses instantly. Protect your privacy with our disposable email service.</p>
             </div>
 
+            <!-- Stats Section -->
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Emails Generated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Available</div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
             <div class="features">
-                <div class="feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Privacy Protection</h3>
-                    <p>Keep your real email address safe from spam and unwanted messages</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>Your real email stays hidden. No personal data collected or stored.</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-clock"></i>
-                    <h3>Instant Access</h3>
-                    <p>Generate temporary email addresses instantly without registration</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Generate disposable emails in seconds. No waiting, no delays.</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-trash"></i>
-                    <h3>Auto-Delete</h3>
-                    <p>Emails are automatically deleted after 24 hours for maximum security</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Auto-Expire</h3>
+                    <p>Emails automatically delete after 24 hours. Zero maintenance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Ready</h3>
+                    <p>Works perfectly on all devices. Responsive and fast.</p>
                 </div>
             </div>
 
-            <div class="action-buttons">
-                <a href="dashboard.html" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i>
-                    Get Started Now
-                </a>
-                <a href="login.html" class="btn btn-secondary">
-                    <i class="fas fa-sign-in-alt"></i>
-                    Login to Account
-                </a>
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to protect your privacy?</h2>
+                    <p>Start using TempMail now - it's completely free!</p>
+                </div>
+                <div class="action-buttons">
+                    <a href="dashboard.html" class="btn btn-primary">
+                        <span class="btn-text">Get Started Free</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="login.html" class="btn btn-secondary">
+                        <span class="btn-text">Sign In</span>
+                        <i class="fas fa-sign-in-alt"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="info">
-                <p><i class="fas fa-info-circle"></i> No registration required to start using TempMail</p>
+            <!-- Trust Indicators -->
+            <div class="trust-section">
+                <div class="trust-item">
+                    <i class="fas fa-lock"></i>
+                    <span>SSL Encrypted</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-user-shield"></i>
+                    <span>No Registration</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Open Source</span>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </div>
 </body>
